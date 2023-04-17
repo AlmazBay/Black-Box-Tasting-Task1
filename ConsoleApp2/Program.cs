@@ -19,6 +19,9 @@ namespace ProjectOne
                 b = Convert.ToDouble(Console.ReadLine());
                 Console.Write("c = ");
                 c = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine("--------------------------");
+                Console.WriteLine();
                 Discriminant(a, b, c);
             }
             catch (Exception)
@@ -36,6 +39,8 @@ namespace ProjectOne
             if (a == 0)
             {
                 Console.WriteLine("На ноль делить нельзя!");
+                Console.WriteLine("Уравнение не имеет корней");
+                Console.ReadKey();
             }
             else
             {
