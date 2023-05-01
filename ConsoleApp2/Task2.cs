@@ -8,29 +8,62 @@ namespace ConsoleApp2
 {
     internal class Task2
     {
-        public static void Main()
+        public static void Mainr(string[] args)
         {
-            int a, b, c;
+            sbyte a, b, c;
             Console.WriteLine("Введите длины треугольника");
             try
             {
-                Console.WriteLine("a= ");
-                a = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("b= ");
-                b = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("c= ");
-                c = Convert.ToInt32(Console.ReadLine());
+                Console.Write("a= ");
+                a = Convert.ToSByte(Console.ReadLine());
+                Console.Write("b= ");
+                b = Convert.ToSByte(Console.ReadLine());
+                Console.Write("c= ");
+                c = Convert.ToSByte(Console.ReadLine());
                 Triangle(a, b, c);
             }
             catch (Exception)
             {
-                Console.WriteLine("Вы ввелие неверные данные");
+                Console.WriteLine("Вы ввели неверные данные");
             }
         }
 
-        public static void Triangle(int a, int b, int c)
+        public static void Triangle(sbyte a, sbyte b, sbyte c)
         {
-
+            if (((a + b) < c) || ((a + c) < b) || ((b + c) < a))
+            {
+                Console.WriteLine("Такого треугольника не существует:(");
+            }
+            else
+            {
+                if (a <= 0 || b <= 0 || c <= 0)
+                {
+                    Console.WriteLine("Такого треугольника не существует:(");
+                }
+                else
+                {
+                    if ((a != b) && (a != c) && (c != b))
+                    {
+                        if ((Math.Pow(a, 2) + Math.Pow(b, 2) == Math.Pow(c, 2) || (Math.Pow(a, 2) + Math.Pow(c, 2) == Math.Pow(b, 2) || (Math.Pow(c, 2) + Math.Pow(b, 2) == Math.Pow(a, 2)))))
+                        {
+                            Console.WriteLine("Треугольник прямоугольный!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Треульник разносторонний!");
+                        }
+                    }
+                    else if ((a == b) && (a == c) && (b == c))
+                    {
+                        Console.WriteLine("Треугольник равносторонний!");
+                    }
+                    else if ((a == b) || (a == c) || (b == c))
+                    {
+                        Console.WriteLine("Треугольник равнобедренный!");
+                    }
+                }
+                
+            }
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp2;
+using System;
 using System.Diagnostics;
 
 namespace ProjectOne
@@ -7,7 +8,7 @@ namespace ProjectOne
     {
 
 
-        public static void Main(string[] args)
+        public static void Maint(string[] args)
         {
             double a, b, c;
             Console.WriteLine("Введите входные данные: ");
